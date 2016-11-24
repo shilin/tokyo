@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124151334) do
+ActiveRecord::Schema.define(version: 20161124170533) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "additives", force: :cascade do |t|
+    t.integer  "dish_id"
+    t.integer  "addable_id"
+    t.integer  "multiplier"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "addable_type"
+  end
+
+  add_index "additives", ["addable_id", "addable_type"], name: "index_additives_on_addable_id_and_addable_type", using: :btree
+  add_index "additives", ["dish_id"], name: "index_additives_on_dish_id", using: :btree
 
   create_table "cores", force: :cascade do |t|
     t.string   "name"
@@ -30,24 +42,12 @@ ActiveRecord::Schema.define(version: 20161124151334) do
 
   add_index "dishes", ["core_id"], name: "index_dishes_on_core_id", using: :btree
 
-  create_table "doses", force: :cascade do |t|
-    t.integer  "dish_id"
-    t.integer  "ingredient_id"
-    t.integer  "multiplier"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  add_index "doses", ["dish_id"], name: "index_doses_on_dish_id", using: :btree
-  add_index "doses", ["ingredient_id"], name: "index_doses_on_ingredient_id", using: :btree
-
   create_table "ingredients", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "additives", "dishes"
   add_foreign_key "dishes", "cores"
-  add_foreign_key "doses", "dishes"
-  add_foreign_key "doses", "ingredients"
 end

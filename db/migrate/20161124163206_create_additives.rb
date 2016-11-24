@@ -1,10 +1,8 @@
-class CreateDoses < ActiveRecord::Migration
+class CreateAdditives < ActiveRecord::Migration
   def change
-    create_table :doses do |t|
+    create_table :additives do |t|
       t.references :dish, index: true, foreign_key: true
-
-      t.references :ingredient, index: true, foreign_key: true
-
+      t.references :addable, index: true 
       t.integer :multiplier
 
       t.timestamps null: false
