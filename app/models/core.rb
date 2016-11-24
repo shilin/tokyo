@@ -1,5 +1,5 @@
 class Core < ActiveRecord::Base
-  has_many :dishes, dependent: :destroy
+  has_many :dishes
 
   validates :name, presence: true
 end
