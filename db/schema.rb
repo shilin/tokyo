@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161124170533) do
+ActiveRecord::Schema.define(version: 20161124180037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,8 +36,9 @@ ActiveRecord::Schema.define(version: 20161124170533) do
 
   create_table "dishes", force: :cascade do |t|
     t.integer  "core_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "multiplier", default: 1
   end
 
   add_index "dishes", ["core_id"], name: "index_dishes_on_core_id", using: :btree
