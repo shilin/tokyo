@@ -1,5 +1,6 @@
 FactoryGirl.define do
+
   factory :core do
-    name "MyNoodle"
+    sequence(:name) { |n| "MyCore#{n}" }
   end
 end

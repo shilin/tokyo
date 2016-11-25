@@ -32,11 +32,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+
+gem 'slim-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  # gem 'capybara-webkit'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+
 end
 
 group :development do
@@ -49,5 +56,7 @@ end
 
 group :test do
    gem 'shoulda-matchers'
+   gem 'capybara'
+   gem 'launchy'
 end
 

@@ -1,5 +1,6 @@
 FactoryGirl.define do
+
   factory :dish do
-    base nil
+    core
   end
 end

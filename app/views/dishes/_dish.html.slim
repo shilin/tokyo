@@ -1,0 +1,5 @@
+li
+  p= dish.core.name
+  ul class="ingredients"
+    = render partial: 'shared/multiplicant', collection: Ingredient.all
+
