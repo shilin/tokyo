@@ -6,5 +6,6 @@ class Dish < ActiveRecord::Base
 
   validates :multiplier, numericality: { greater_than_or_equal_to: 1, only_integer: true }
 
+  accepts_nested_attributes_for :additives, reject_if: :all_blank, allow_destroy: true
 
 end

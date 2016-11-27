@@ -1,0 +1,9 @@
+- id = a_fields.object.addable.id
+li[id="additive_#{id}" class="additive-item" data-id="#{id}"]
+  = a_fields.object.addable.name
+  <br/> 
+  = link_to '-', '', class: "minus"
+  <span class="multiplier">
+  = a_fields.text_field 'multiplier'
+  </span>
+  = link_to '+', '', class: "plus"

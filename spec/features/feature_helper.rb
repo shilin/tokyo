@@ -2,7 +2,8 @@
 require_relative '../rails_helper'
 
 # Capybara.javascript_driver = :webkit
-Capybara.javascript_driver = :poltergeist
+# Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :selenium
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = false

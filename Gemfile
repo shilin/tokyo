@@ -42,6 +42,9 @@ group :development, :test do
   gem 'factory_girl_rails'
   # gem 'capybara-webkit'
   gem 'poltergeist'
+  # gem 'selenium'
+  # gem 'selenium-webdriver', '2.53.4'
+  gem 'selenium-webdriver'
   gem 'database_cleaner'
 
 end

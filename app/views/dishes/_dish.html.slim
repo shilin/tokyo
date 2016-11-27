@@ -1,5 +1,10 @@
 li
-  p= dish.core.name
-  ul class="ingredients"
-    = render partial: 'shared/multiplicant', collection: Ingredient.all
+  = form_for dish do |f|
+    p= dish.core.name
+    ul class="ingredients"
+
+    = f.fields_for :additives, dish.additives do |additive_fields|
+      = render partial: 'shared/additive', locals: {a_fields: additive_fields}
+    = f.submit 'Order'
+
 
