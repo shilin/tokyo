@@ -1,10 +1,13 @@
 li
-  = form_for dish do |f|
+  = form_for dish, remote: true do |f|
     p= dish.core.name
+    = f.text_field 'core_id', type: :hidden
     ul class="ingredients"
 
     = f.fields_for :additives, dish.additives do |additive_fields|
       = render partial: 'shared/additive', locals: {a_fields: additive_fields}
+    = render partial: 'shared/quantity_field', locals: {f: f}
+
     = f.submit 'Order'
 
 

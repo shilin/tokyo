@@ -1,0 +1,9 @@
+<% if @dish.errors.present? %>
+
+  <% @dish.errors.full_messages.each do |message| %>
+    $('#validation_errors').append('<%= message %></br>')
+  <% end %>
+<% end %>
+
+
+$('#flash').html('<%= j render "shared/flash" %>')

@@ -1,0 +1,7 @@
+div[class="multipliable-item dish-quantity"]
+  p quantity:
+  = link_to '-', '', class: "minus"
+  <span class="multiplier">
+  = f.text_field 'multiplier'
+  </span>
+  = link_to '+', '', class: "plus"

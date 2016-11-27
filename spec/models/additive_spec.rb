@@ -4,7 +4,6 @@ RSpec.describe Additive, type: :model do
   it { should belong_to :dish }
   it { should belong_to :addable }
 
-  it { should validate_presence_of :dish_id }
   it { should validate_presence_of :addable_id }
   it { should validate_presence_of :addable_type }
 

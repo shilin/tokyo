@@ -9,7 +9,6 @@ ready = ->
 
     node = findMultiplierNode(this)
     subtractOne(node)
-    # addable_id = $(this).closest('li.additive-item').data('id')
 
   $('.plus').click (e) ->
     e.preventDefault()
@@ -20,11 +19,18 @@ ready = ->
 # $(document).ready(binding) # "вешаем" функцию binding на событие document.ready
 
 findMultiplierNode = (currentNode) -> 
-  $(currentNode).closest('li.additive-item').find('.multiplier input')
+  $(currentNode).closest('.multipliable-item').find('.multiplier input')
 
 subtractOne = (node) ->
   old_value = +node.val()
-  node.val(old_value - 1) unless old_value == 0
+  minimal_value = if node.closest('.multipliable-item.dish-quantity')
+      1
+    else
+      0
+
+  node.val(old_value - 1) if old_value > minimal_value
+ # node.val(old_value - 1) unless old_value == 0
+  
 
 addOne = (node) ->
   old_value = +node.val()

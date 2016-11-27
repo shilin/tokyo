@@ -6,12 +6,13 @@ feature 'A visitor is able to see list of dishes with available ingredients', %q
   I want to be able to see available dishes to build
 ) do
 
-  given!(:core1) { create(:core) }
-  given!(:core2) { create(:core) }
-  given!(:ingredient1) { create(:ingredient) }
-  given!(:ingredient2) { create(:ingredient) }
+  given!(:core1) { create(:core, name: 'MyCore1') }
+  given!(:core2) { create(:core, name: 'MyCore2') }
+  given!(:ingredient1) { create(:ingredient, name: 'MyIngredient1') }
+  given!(:ingredient2) { create(:ingredient, name: 'MyIngredient2') }
 
   scenario 'Visitor goes to index page' do
+
 
     visit root_path
 
