@@ -2,6 +2,9 @@ class DishesController < ApplicationController
   respond_to :js, :json
 
   before_action :build_dishes, only: [:index]
+  before_action :create_cart, only: [:index]
+
+  after_action :add_to_cart, only: [:create]
 
   def index
     respond_with(@dishes)
@@ -25,5 +28,13 @@ class DishesController < ApplicationController
         dish.additives.build(addable: ing, multiplier: 0)
       end
     end
+  end
+
+  def create_cart
+    session[:cart] ||= []
+  end
+
+  def add_to_cart
+    session[:cart] << @dish.id
   end
 end

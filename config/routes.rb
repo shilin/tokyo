@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'dishes#index'
 
   resources :dishes, only: [:index, :create]
+  resource :cart, only: [:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

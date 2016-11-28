@@ -2,3 +2,8 @@ h1 Try us!
 div#dish_list
   ul
     = render @dishes
+
+div#see_my_order
+  = link_to 'My order', cart_path
+
+
