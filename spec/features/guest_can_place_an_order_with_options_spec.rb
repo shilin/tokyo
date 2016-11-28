@@ -71,6 +71,8 @@ feature 'A visitor is able to select available ingredients and their amount and 
     find_nodes
 
     # minimal value for ingredient is zero
+    3.times { @dish1_plus_links[0].click }
+    expect(@dish1_multiplier_inputs[0].value).to eq '3'
     10.times { @dish1_minus_links[0].click }
     expect(@dish1_multiplier_inputs[0].value).to eq '0'
     
