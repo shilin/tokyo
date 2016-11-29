@@ -38,11 +38,9 @@ gem 'responders'
 
 gem 'dotenv'
 gem 'dotenv-deployment', require: 'dotenv/deployment'
-<<<<<<< HEAD
 gem 'therubyracer'
 gem 'unicorn'
-=======
->>>>>>> prepare for deployment
+gem 'therubyracer'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
