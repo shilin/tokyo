@@ -48,7 +48,7 @@ feature 'A visitor is able to select available ingredients and their amount and 
     2.times { @dish1_plus_quantity.click }
 
     page.all('input[type=submit]')[0].click
-    sleep 3
+    sleep 5
     page.all('input[type=submit]')[1].click
 
     click_on('My order')
