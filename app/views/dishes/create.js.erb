@@ -6,4 +6,4 @@
 <% end %>
 
 
-$('#flash').html('<%= j render "shared/flash" %>')
+$('#flash').hide().html('<%= j render "shared/flash" %>').fadeIn(1000).fadeOut(1500);

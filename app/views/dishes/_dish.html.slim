@@ -1,4 +1,4 @@
-li
+li.dish-form
   = form_for dish, remote: true do |f|
     p= dish.core.name
     = f.text_field 'core_id', type: :hidden
